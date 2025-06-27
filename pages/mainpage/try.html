@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | UE Caloocan Registrar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #a00000;
+    }
+    .main-heading {
+      position: sticky;
+      top: 60px;
+      z-index: 100;
+      background: #f9f9f9;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      color: #7a0026;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .quicklinks-section {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .quicklinks-section h5 {
+      color: #7a0026;
+      margin-bottom: 1rem;
+    }
+    .quicklinks-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .quicklinks-section a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      margin-bottom: 0.75rem;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .quicklinks-section a i {
+      margin-right: 10px;
+      color: #7a0026;
+    }
+    .quicklinks-section a:hover {
+      background-color: #7a0026;
+      color: #fff;
+    }
+    .quicklinks-section a:hover i {
+      color: #fff;
+    }
+    .footer {
+      background-color: #7a0026;
+      color: #fff;
+      padding: 2rem 0;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .footer a:hover {
+      color: #ccc;
+    }
+    .footer h6 {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .footer p, .footer a {
+      font-size: 0.9rem;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 15px;
+      background-color: black;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 1000;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 576px) {
+      .main-heading {
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/logologo-removebg-preview.png" alt="UE Logo" height="40" class="me-2"> UE Caloocan Registrar
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../mainpage/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../mainpage/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../mainpage/faqs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Insurance of Academic Records</a></li>
+              <li><a class="dropdown-item" href="#">Authentication of Records</a></li>
+              <li><a class="dropdown-item" href="#">Student Verifications</a></li>
+              <li><a class="dropdown-item" href="#">Online Applications</a></li>
+              <li><a class="dropdown-item" href="#">Other Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">School Calendar</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Registration Schedule</a></li>
+              <li><a class="dropdown-item" href="#">Registration Guide</a></li>
+              <li><a class="dropdown-item" href="#">Graduate Updates</a></li>
+              <li><a class="dropdown-item" href="#">Downloadable Forms</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex ms-3" role="search">
+          <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Heading -->
+  <div class="main-heading"><strong>Contact the UE Caloocan Registrar</strong></div>
+
+  <!-- Content Section -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <!-- Contact Details -->
+      <div class="col-lg-6 col-md-12">
+        <div class="card p-4 shadow-sm" data-aos="fade-up">
+          <h4 class="mb-3"><i class="bi bi-info-circle me-2"></i>Registrar Contact Details</h4>
+          <ul class="list-unstyled mb-4">
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-danger"></i><strong>Email:</strong> <a href="mailto:drrm.cal@ue.edu.ph">drrm.cal@ue.edu.ph</a></li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-danger"></i><strong>Phone:</strong> 5310-4550, 5328-4572 loc 184</li>
+            <li><i class="bi bi-geo-alt-fill me-2 text-danger"></i><strong>Address:</strong> 105 Samson Road, Caloocan City</li>
+          </ul>
+          <h5 class="mb-3"><i class="bi bi-map me-2"></i>Campus Location</h5>
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5762904719985!2d120.97800821480506!3d14.658826489757901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b35ae022bb6b%3A0xa1b6c3ae7b885ec!2sUniversity%20of%20the%20East%20Caloocan!5e0!3m2!1sen!2sph!4v1714466671431!5m2!1sen!2sph"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-12">
+        <div class="quicklinks-section" data-aos="fade-left">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#"><i class="bi bi-laptop"></i>Online Enrollment</a></li>
+            <li><a href="#"><i class="bi bi-file-earmark-text"></i>Request Documents</a></li>
+            <li><a href="#"><i class="bi bi-award"></i>Scholarship Services</a></li>
+            <li><a href="#"><i class="bi bi-question-circle"></i>Registrar FAQs</a></li>
+            <li><a href="#"><i class="bi bi-envelope-paper"></i>Contact Registrar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-white">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4 mb-4 text-center">
+          <img src="../../assets/University_of_the_East_seal.png" class="footer-logo mb-2" alt="University of the East Seal" style="max-height: 100px;">
+          <h5>University of the East - Caloocan</h5>
+          <p>Department of Registration and Records Management</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h6>Contact</h6>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:drrm.cal@ue.edu.ph">drrm.cal@ue.edu.ph</a></p>
+          <p><i class="bi bi-telephone-fill"></i> 5310-4550, 5328-4572 loc 184</p>
+          <p><i class="bi bi-geo-alt-fill"></i> 105 Samson Road, Caloocan City</p>
+        </div>
+        <div class="col-md-4 text-center text-md-start">
+          <h6>About</h6>
+          <p>This page provides essential information and services from the DRRM Office. It is designed to help active, inactive students, and alumni navigate academic records application, registration & graduation processes.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center small">&copy; 2025 University of the East – Caloocan. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">&uarr;</div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('show', window.scrollY > 200);
+    });
+  </script>
+</body>
+</html>

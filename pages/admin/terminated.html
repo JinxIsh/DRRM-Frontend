@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University of the Eas56t - Caloocan</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link href="../../css/admin/terminated.css" rel="stylesheet" />
+
+   <!--Navbar icon-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Top Navbar for Mobile -->
+  <nav class="navbar navbar-light bg-white border-bottom fixed-top d-md-none">
+    <div class="container-fluid">
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
+        <i class="bi bi-list"></i>
+      </button>
+      <span class="navbar-brand mx-auto">Admin Page</span>
+    </div>
+  </nav>
+
+  <!-- Sidebar (always visible on desktop) -->
+  <div class="sidebar d-none d-md-block position-fixed top-0 bottom-0">
+    <h4>University of the East</h4>
+    <span class="navbar-subtitle">Admin Page</span>
+    <a href="../admin/client.html"><i class="bi bi-person-fill me-2"></i>Client Page</a>
+    <a href="../admin/terminated.html"><i class="bi bi-person-x-fill me-2"></i>Terminated Records</a>
+  </div>
+
+  <!-- Offcanvas for Mobile -->
+  <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvasSidebar">
+    <div class="offcanvas-header bg-danger text-white">
+      <h5 class="offcanvas-title">University of the East</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="navbar-subtitle"><h4><strong>Admin Page</strong></h4></div>
+    <a href="../admin/client.html"><i class="bi bi-person-fill me-2"></i>Client Page</a>
+    <a href="../admin/terminated.html"><i class="bi bi-person-x-fill me-2"></i>Terminated Records</a>
+    </div>
+  </div>
+
+    <!--Content-->  
+<div class="main-content">
+  <div class="container">
+    <!-- Search Bar -->
+    <div class="d-flex justify-content-end align-items-center mb-4">
+        <input type="text" class="form-control w-50" id="searchInput" placeholder="Search by Name...">
+    </div>
+    <!-- Terminated Records Panel -->
+    <h4 class="fw-semibold">Terminated Requests</h4>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover bg-white">
+        <thead class="table-danger">
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="terminatedTable">
+          <!-- Terminated requests will go here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="requestModalLabel">Request Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img id="paymentProof" src="" alt="Proof of Payment" class="img-fluid rounded border">
+          </div>
+          <div class="col-md-6">
+            <p><strong>Full Name:</strong> <span id="modalName"></span></p>
+            <p><strong>ID:</strong> <span id="modalID"></span></p>
+            <p><strong>Student Number:</strong> <span id="modalStudentNumber"></span></p>
+            <p><strong>Documents Requested:</strong> <span id="modalDocuments"></span></p>
+            <p><strong>Last SY Enrolled:</strong> <span id="modalSY"></span></p>
+            <p><strong>Course:</strong> <span id="modalCourse"></span></p>
+            <div class="mt-3">
+              <button id="togglePayment" class="btn btn-success w-100 mb-2">Mark as Paid</button>
+              <button id="toggleDelivery" class="btn btn-info w-100 mb-2">Mark for Delivery</button>
+              <button id="toggleTermination" class="btn btn-danger w-100">Mark as Terminated</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../js/admin/teminated.js"></script>
+</body>
+</html>

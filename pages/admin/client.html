@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University of the East - Caloocan</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom CSS -->
+  <link href="../../css/admin/client.css" rel="stylesheet" />
+  <!--Navbar icon-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navbar (Mobile) -->
+  <nav class="navbar border-bottom fixed-top d-md-none">
+    <div class="container-fluid">
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
+        <i class="bi bi-list"></i>
+      </button>
+      <span class="navbar-brand mx-auto">Admin Page</span>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-none d-md-block position-fixed top-0 bottom-0 bg-light p-3">
+    <h4>University of the East</h4>
+    <span class="navbar-subtitle">Admin Page</span>
+    <a href="../admin/client.html"><i class="bi bi-person-fill me-2"></i>Client Page</a>
+    <a href="../admin/terminated.html"><i class="bi bi-person-x-fill me-2"></i>Terminated Records</a>
+  </div>
+
+  <!-- Offcanvas Sidebar (Mobile) -->
+  <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvasSidebar">
+    <div class="offcanvas-header bg-danger text-white">
+      <h5 class="offcanvas-title">University of the East</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="navbar-subtitle"><h4><strong>Admin Page</strong></h4></div>
+    <a href="../admin/client.html"><i class="bi bi-person-fill me-2"></i>Client Page</a>
+    <a href="../admin/terminated.html"><i class="bi bi-person-x-fill me-2"></i>Terminated Records</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" style="margin-left: 250px;">
+    <div class="container pt-4">
+      <!-- Responsive Header & Search/Filter -->
+      <div class="row mb-4">
+        <div class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0">
+          <h2 class="fw-bold mb-0">User Requests</h2>
+        </div>
+        <div class="col-12 col-md-5 mb-2 mb-md-0">
+          <input type="text" class="form-control" id="searchInput" placeholder="Search by name, ID, or other details...">
+        </div>
+        <div class="col-12 col-md-3">
+          <select id="filterStatus" class="form-select">
+            <option value="all">All Status</option>
+            <option value="paid">Paid</option>
+            <option value="unpaid">Unpaid</option>
+            <option value="delivery">For Delivery</option>
+            <option value="pending">Pending Delivery</option>
+            <option value="active">Active</option>
+            <option value="terminated">Terminated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-responsive mb-3">
+        <table class="table table-bordered align-middle text-center bg-white">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="requestTable">
+            <tr>
+              <td>Jiorielle Salvador</td>
+              <td>2025-06-19</td>
+              <td>
+                <span class="badge bg-secondary">Unpaid</span>
+                <span class="badge bg-warning text-dark">Pending Delivery</span>
+                <span class="badge bg-light text-dark">Active</span>
+              </td>
+              <td>
+                <button class="btn btn-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#requestModal">View</button>
+                <button class="btn btn-outline-danger btn-sm">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Request Details Modal -->
+  <div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header text-white" style="background-color: #970c15ec;">
+          <h5 class="modal-title" id="requestModalLabel">Request Details</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Left Panel -->
+            <div class="col-md-5 d-flex flex-column gap-3">
+              <div class="border p-2">
+                <p class="mb-1"><strong>ID Preview</strong></p>
+                <img id="uploadedID" src="https://via.placeholder.com/300x200?text=Uploaded+ID" alt="Uploaded ID" class="img-fluid rounded border w-100">
+              </div>
+              <div class="border p-2 text-center">
+                <p class="mb-1"><strong>Proof of Payment</strong></p>
+                <img id="paymentProof" src="https://via.placeholder.com/300x200?text=Payment+Proof" alt="Payment Proof" class="img-fluid rounded border w-100">
+              </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="col-md-7">
+              <div class="border p-3 mb-3">
+                <p><strong>Name:</strong> JUAN DELACRUZ</p>
+                <p><strong>Birthday:</strong> BIRTHDAY</p>
+                <p><strong>Address:</strong> 222</p>
+                <p><strong>Last SY Attended:</strong> 2003-2004</p>
+                <p><strong>Course:</strong> Uterus Engineering</p>
+              </div>
+
+              <div class="border rounded p-4 mb-4 shadow-sm">
+                <h5 class="fw-bold mb-3"><i class="bi bi-file-earmark-text-fill me-2"></i>Documents Requested</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm mb-0">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Document</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-end">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Transcript of Records</td>
+                        <td class="text-center">4</td>
+                        <td class="text-end">₱1,000</td>
+                      </tr>
+                      <tr>
+                        <td>Diploma</td>
+                        <td class="text-center">2</td>
+                        <td class="text-end">₱9,000,000</td>
+                      </tr>
+                      <tr>
+                        <td>Marriage Certificate</td>
+                        <td class="text-center">1</td>
+                        <td class="text-end">₱1,000,000,000</td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="table-light">
+                      <tr>
+                        <td colspan="2" class="text-end fw-semibold">Total:</td>
+                        <td class="text-end fw-bold text-success">₱1,009,001,000</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+
+              <div class="border p-3">
+                <p><strong>Special Requests:</strong></p>
+                <p class="bg-light p-2 rounded">my student number is: 20221141215. Pls dont mind my big eyes in the ID.</p>
+              </div>
+
+              <div class="mt-3">
+                <button id="togglePayment" class="btn btn-success w-100 mb-2">Mark as Paid</button>
+                <button id="toggleDelivery" class="btn btn-info w-100 mb-2">Mark for Delivery</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" onclick="window.print()">
+            <i class="bi bi-printer me-1"></i> Print
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/admin/client.js"></script>
+</body>
+</html>
