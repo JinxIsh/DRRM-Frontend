@@ -103,39 +103,84 @@
   </div>
 </div>
 
-<!-- LOGIN MODAL -->
-<div class="overlay" id="overlay"></div>
-<div class="login-container" id="loginContainer">
-  <div class="glass-box" id="loginBox">
-    <button class="close-btn" id="closeLoginBtn">×</button>
-    <h3 class="text-center mb-4">Admin Login</h3>
-    <form>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <div class="input-group position-relative">
-          <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-          <input type="password" class="form-control" id="password" placeholder="Enter your password" required />
-          <span class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center pe-3" style="cursor: pointer;" onclick="togglePasswordVisibility()">
-            <i id="togglePasswordIcon" class="bi bi-eye"></i>
-          </span>
-        </div>
-      </div>
-      <div class="mb-3 d-flex justify-content-between align-items-center">
-        <a href="#" class="text-decoration-none small text-light">Forgot Password?</a>
-      </div>
-      <button type="submit" class="btn btn-light w-100">Login</button>
-    </form>
-  </div>
-</div>
+  <!-- OVERLAY + MODALS -->
+  <div class="overlay" id="overlay"></div>
+  <div class="login-container" id="loginContainer">
 
-<!-- Bootstrap JS Bundle -->
+    <!-- LOGIN MODAL -->
+    <div class="glass-box" id="loginBox">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <h3 class="text-center mb-4">Admin Login</h3>
+      <form>
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <div class="input-group position-relative">
+            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+            <input type="password" class="form-control pe-5" id="loginPassword" placeholder="Enter your password" required />
+            <span class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center pe-3" style="cursor: pointer;" onclick="togglePassword('loginPassword', 'toggleIcon1')">
+              <i id="toggleIcon1" class="bi bi-eye"></i>
+            </span>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <button type="button" class="btn-toggle" id="toSignup">Sign Up</button>
+        </div>
+        <button type="submit" class="btn btn-light w-100">Login</button>
+      </form>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+    <div class="glass-box" id="signupBox">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <h3 class="text-center mb-4">Sign Up</h3>
+      <form>
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+            <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="signupName" class="form-label">Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+            <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="signupBirthday" class="form-label">Birthday</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
+            <input type="date" class="form-control" id="signupBirthday" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label">Password</label>
+          <div class="input-group position-relative">
+            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+            <input type="password" class="form-control pe-5" id="signupPassword" placeholder="Enter your password" required />
+            <span class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center pe-3" style="cursor: pointer;" onclick="togglePassword('signupPassword', 'toggleIcon2')">
+              <i id="toggleIcon2" class="bi bi-eye"></i>
+            </span>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <button type="button" class="btn-toggle" id="toLogin">Back to Login</button>
+        </div>
+        <button type="submit" class="btn btn-light w-100">Register</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Bootstrap & Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../js/mainpage/index.js"></script>
 </body>

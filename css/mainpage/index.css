@@ -145,6 +145,50 @@ h4 {
   transform: rotate(90deg);
 }
 
+/* Overlay and Login Container */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1050;
+  display: none;
+}
+
+.login-container {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1060;
+  padding: 1rem;
+}
+
+/* Glass Box */
+.glass-box {
+  background: rgba(122, 0, 38, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateX(50px);
+}
+
+.glass-box.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  animation: zoomIn 0.5s ease;
+}
+
+/* Input Group Styling */
 .glass-box .input-group {
   width: 100%;
   background-color: rgba(244, 239, 240, 0.2);
@@ -178,11 +222,13 @@ h4 {
   background-color: rgba(122, 0, 38, 0.15);
 }
 
+/* Text and Labels */
 .glass-box .form-label,
 .glass-box .form-check-label {
   color: #ddd;
 }
 
+/* Buttons */
 .glass-box .btn-light {
   background-color: #7a0026;
   color: #fff;
@@ -195,7 +241,50 @@ h4 {
   background-color: #a00040;
 }
 
+/* Common UI Elements */
+.input-group-text i {
+  color: white !important;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 26px;
+  color: #eee;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  background: none;
+  border: none;
+  color: #ddd;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Animation */
 @keyframes zoomIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

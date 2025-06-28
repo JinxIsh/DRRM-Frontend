@@ -6,29 +6,47 @@ function toggleMute() {
   icon.className = video.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
 }
 
-const loginBox = document.getElementById('loginBox');
-const overlay = document.getElementById('overlay');
-const loginContainer = document.getElementById('loginContainer');
-const showLoginBtn = document.getElementById('showLoginBtn');
-const closeLoginBtn = document.getElementById('closeLoginBtn');
+document.getElementById("showLoginBtn").addEventListener("click", () => {
+  loginContainer.style.display = "flex";
+  overlay.style.display = "block";
+  document.body.style.overflow = "hidden";
 
-showLoginBtn.addEventListener('click', () => {
-  loginContainer.style.display = 'flex';
-  overlay.style.display = 'block';
-  document.body.style.overflow = 'hidden';
+  // Show only login box
+  loginBox.classList.add("show");
+  signupBox.classList.remove("show");
+  signupBox.style.display = "none"; // <- force hide
+  loginBox.style.display = "block"; // <- show login
 });
 
-closeLoginBtn.addEventListener('click', () => {
-  loginContainer.style.display = 'none';
-  overlay.style.display = 'none';
-  document.body.style.overflow = '';
+document.getElementById("toSignup").addEventListener("click", () => {
+  loginBox.classList.remove("show");
+  signupBox.classList.add("show");
+  loginBox.style.display = "none"; // <- hide login
+  signupBox.style.display = "block"; // <- show signup
 });
 
-function togglePasswordVisibility() {
-  const passwordInput = document.getElementById('password');
-  const toggleIcon = document.getElementById('togglePasswordIcon');
-  const isPassword = passwordInput.type === 'password';
-  passwordInput.type = isPassword ? 'text' : 'password';
-  toggleIcon.classList.toggle('bi-eye');
-  toggleIcon.classList.toggle('bi-eye-slash');
+document.getElementById("toLogin").addEventListener("click", () => {
+  signupBox.classList.remove("show");
+  loginBox.classList.add("show");
+  signupBox.style.display = "none"; // <- hide signup
+  loginBox.style.display = "block"; // <- show login
+});
+
+function closeModal() {
+  loginContainer.style.display = "none";
+  overlay.style.display = "none";
+  loginBox.classList.remove("show");
+  signupBox.classList.remove("show");
+  loginBox.style.display = "none";
+  signupBox.style.display = "none";
+  document.body.style.overflow = "";
+}
+// Function to toggle password visibility
+function togglePassword(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+  const isHidden = input.type === "password";
+  input.type = isHidden ? "text" : "password";
+  icon.classList.toggle("bi-eye");
+  icon.classList.toggle("bi-eye-slash");
 }
