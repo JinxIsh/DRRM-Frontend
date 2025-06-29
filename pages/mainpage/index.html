@@ -128,7 +128,21 @@
         <button type="submit" class="btn btn-light w-100">Login</button>
       </form>
     </div>
-
+    <!-- OTP Verification Modal -->
+    <div class="glass-box" id="otpBox" style="display: none;">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <h3 class="text-center mb-4">OTP Verification</h3>
+      <form id="otpForm">
+        <div class="mb-3">
+          <label for="otpCode" class="form-label">Enter OTP Code</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
+            <input type="text" class="form-control" id="otpCode" placeholder="Enter 6-digit code" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-light w-100">Verify</button>
+      </form>
+    </div>
     <!-- Signup Modal -->
     <div class="glass-box wide-modal no-scroll mt-3" id="signupBox" style="display: none;">
       <button class="close-btn" onclick="closeModal()">×</button>
