@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>University of the East - Caloocan</title>
+  <title>Online Applications - UE Caloocan</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link href="../../css/mainpage/about.css" rel="stylesheet" />
-  <!--CSS card animation-->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="../../css/services/onlineApplications.css" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -30,11 +30,11 @@
           <li class="nav-item"><a class="nav-link" href="../mainpage/index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../mainpage/about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="../mainpage/faqs.html">FAQs</a></li>
-          <li class="nav-item"><a class="nav-link active" href="../mainpage/contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="../mainpage/contact.html">Contact</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Services</a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="../services/issuanceOfRecords.html">Issuance of Academic Records</a></li>
+             <li><a class="dropdown-item" href="../services/issuanceOfRecords.html">Issuance of Academic Records</a></li>
               <li><a class="dropdown-item" href="../services/authenticationOfRecords.html">Authentication of Records</a></li>
               <li><a class="dropdown-item" href="../services/studentVerifications.html">Student Verifications</a></li>
               <li><a class="dropdown-item" href="../services/onlineApplications.html">Online Applications</a></li>
@@ -57,52 +57,65 @@
     </div>
   </nav>
 
-    <!-- Heading First -->
-    <div class="main-heading"><strong>Registrar Contact Details</strong></div>
+  <!-- Hero Header -->
+  <div class="hero-header">
+    <h1 data-aos="zoom-in">Online Applications</h1>
+    <p data-aos="fade-up">Apply and track your documents with ease</p>
+  </div>
 
-    <!-- Google Map Below, with spacing -->
-    <div class="container mt-4 mb-5">
-    <div class="map-header-size rounded shadow overflow-hidden" style="height: 350px; margin-top: 80px;">
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5762904719985!2d120.97800821480506!3d14.658826489757901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b35ae022bb6b%3A0xa1b6c3ae7b885ec!2sUniversity%20of%20the%20East%20Caloocan!5e0!3m2!1sen!2sph!4v1714466671431!5m2!1sen!2sph"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="container mb-5">
+  <!-- Main Content -->
+  <div class="container my-5">
     <div class="row g-4">
-        <div class="col-lg-6 col-md-12">
-        <div class="card p-4 h-100 shadow-sm border-0">
-            <h4 class="mb-3 text-danger"><i class="bi bi-info-circle-fill me-2"></i>Registrar Contact Details</h4>
-            <ul class="list-unstyled mb-4">
-            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-danger"></i><strong>Email:</strong> <a href="mailto:drrm.cal@ue.edu.ph">drrm.cal@ue.edu.ph</a></li>
-            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-danger"></i><strong>Phone:</strong> 5310-4550, 5328-4572 loc 184</li>
-    
-            </ul>
-            <h5 class="text-danger"><i class="bi bi-map-fill me-2"></i>Campus Location</h5>
-             <ul class="list-unstyled mb-4">
-    
-            <li><i class="bi bi-geo-alt-fill me-2 text-danger"></i><strong>Address:</strong> 105 Samson Road, Caloocan City</li>
-            </ul>
-        </div>
+      <!-- Left Column -->
+      <div class="col-lg-9">
+
+        <div class="info-card" data-aos="fade-up">
+          <h5><i class="bi bi-envelope-paper"></i> How to Apply</h5>
+          <p class="bg-dark text-white p-3 rounded text-center">For online applications, email us at: <strong>drrm.cal@ue.edu.ph</strong></p>
         </div>
 
-        <div class="col-lg-6 col-md-12">
-        <div class="card p-4 h-100 shadow-sm border-0">
-            <h4 class="mb-3 text-danger"><i class="bi bi-clock-fill me-2"></i>Office Hours</h4>
-            <p>Monday to Friday: <strong>8:00 AM – 5:00 PM</strong></p>
-            <p>Saturday & Sunday: <strong>Closed</strong></p>
+        <div class="info-card text-center" data-aos="fade-up">
+          <img src="../../assets/Red and White Minimalist Premium App Comparison Chart Table Graph.png" class="img-fluid rounded shadow-sm" alt="Online App Image">
+        </div>
 
-            <h5 class="mt-4 text-danger"><i class="bi bi-question-circle-fill me-2"></i>Need Assistance?</h5>
-            <p>Visit the registrar’s office or reach out through our official email for academic record requests and inquiries.</p>
+        <div class="info-card text-center" data-aos="fade-up">
+          <p>You may track your document via WWWExpress website:</p>
+          <a href="https://www.wwwexpress.com.ph/" target="_blank"><button class="btn btn-outline-dark">Track Document</button></a>
         </div>
+
+        <div class="info-card" data-aos="fade-up">
+          <h5><i class="bi bi-exclamation-triangle"></i> Important Reminders</h5>
+          <ul>
+            <li>Please allow <strong>2 to 3 business days</strong> for a reply to your email.</li>
+            <li>Make payments only <strong>after receiving the billing</strong> to avoid adjustments.</li>
+            <li>After receiving your tracking number:
+              <ul>
+                <li><strong>Metro Manila</strong>: 3–5 business days</li>
+                <li><strong>Outside Metro Manila</strong>: 5–10 business days</li>
+              </ul>
+            </li>
+          </ul>
         </div>
+
+      </div>
+
+      <!-- Right Column: Quick Links -->
+      <div class="col-lg-3">
+        <div class="quicklinks-section" data-aos="fade-left">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#"><i class="bi bi-laptop"></i> Online Enrollment</a></li>
+            <li><a href="#"><i class="bi bi-file-earmark-text"></i> Request Documents</a></li>
+            <li><a href="#"><i class="bi bi-award"></i> Scholarship Services</a></li>
+            <li><a href="#"><i class="bi bi-question-circle"></i> Registrar FAQs</a></li>
+            <li><a href="#"><i class="bi bi-envelope-paper"></i> Contact Registrar</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
-    <!--footer-->
+  </div>
+
+  <!-- Footer -->
   <footer class="footer text-white">
     <div class="container py-4">
       <div class="row">
@@ -113,17 +126,13 @@
         </div>
         <div class="col-md-4 mb-4 text-center text-md-start">
           <h6>Contact</h6>
-          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:drrm.cal@ue.edu.ph">drrm.cal@ue.edu.ph</a></p>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:drrm.cal@ue.edu.ph" class="text-white">drrm.cal@ue.edu.ph</a></p>
           <p><i class="bi bi-telephone-fill"></i> 5310-4550, 5328-4572 loc 184</p>
           <p><i class="bi bi-geo-alt-fill"></i> 105 Samson Road, Caloocan City</p>
         </div>
         <div class="col-md-4 text-center text-md-start">
           <h6>About</h6>
-          <p>This page provides essential information and services from the DRRM Office. 
-            It is designed to help active, inactive students, and alumni navigate academic 
-            records application, registration & graduation processes. Here, you can find 
-            resources, contact details, and office hours to assist with your academic
-            needs. </p>
+          <p>This page provides essential services from the DRRM Office to help students and alumni process academic records, registration, and graduation efficiently.</p>
         </div>
       </div>
       <hr>
@@ -131,20 +140,17 @@
     </div>
   </footer>
 
+  <!-- Back to Top -->
   <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&uarr;</div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-    // Toggle visibility of back-to-top button
     const backToTopBtn = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
+      backToTopBtn.classList.toggle('show', window.scrollY > 200);
     });
   </script>
 </body>
