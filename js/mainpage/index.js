@@ -49,11 +49,20 @@ document.getElementById("toLogin").addEventListener("click", () => {
 function closeModal() {
   document.getElementById("loginContainer").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-  document.getElementById("loginBox").classList.remove("show");
-  document.getElementById("signupBox").classList.remove("show");
-  document.getElementById("loginBox").style.display = "none";
-  document.getElementById("signupBox").style.display = "none";
-  document.body.style.overflow = ""; // Restores scroll
+
+  // Hide all modals
+  const modals = ["loginBox", "signupBox", "otpBox"];
+  modals.forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove("show");
+    el.style.display = "none";
+  });
+
+  document.body.style.overflow = ""; // Restore scroll
+}
+function resendOtp() {
+  alert("A new OTP has been sent to your email.");
+  // Add logic here to resend the OTP via backend
 }
 
 // DOM Loaded: Runs after HTML is fully loaded

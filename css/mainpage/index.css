@@ -394,19 +394,32 @@ h4 {
   }
 }
 
-/* OTP Box Customization */
-#otpBox {
-  max-width: 340px;
-  animation: zoomIn 0.5s ease;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(50px);
-  transition: opacity 0.5s, transform 0.5s;
+/* OTP Modal Specific Style */
+.otp-glass {
+  max-width: 360px;
+  text-align: center;
 }
 
-#otpBox.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
+.otp-glass .form-control {
+  letter-spacing: 8px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 12px;
 }
+
+.otp-glass .form-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+.otp-glass .btn {
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.otp-glass .input-group-text {
+  padding: 0.6rem 0.9rem;
+}
+
 

@@ -129,18 +129,24 @@
       </form>
     </div>
     <!-- OTP Verification Modal -->
-    <div class="glass-box" id="otpBox" style="display: none;">
+    <div class="glass-box otp-glass" id="otpBox" style="display: none;">
       <button class="close-btn" onclick="closeModal()">×</button>
-      <h3 class="text-center mb-4">OTP Verification</h3>
+      <div class="text-center mb-4">
+        <i class="bi bi-shield-lock-fill fs-1 text-danger"></i>
+        <h4 class="mt-2">Verify Your Identity</h4>
+        <p class="text-white-50 small">Enter the 6-digit code sent to your email</p>
+      </div>
       <form id="otpForm">
         <div class="mb-3">
-          <label for="otpCode" class="form-label">Enter OTP Code</label>
+          <label for="otpCode" class="form-label">OTP Code</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
-            <input type="text" class="form-control" id="otpCode" placeholder="Enter 6-digit code" required />
+            <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+            <input type="text" class="form-control text-center fs-5" id="otpCode" placeholder="••••••" maxlength="6" required />
           </div>
         </div>
-        <button type="submit" class="btn btn-light w-100">Verify</button>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-light">Verify</button>
+        </div>
       </form>
     </div>
     <!-- Signup Modal -->
