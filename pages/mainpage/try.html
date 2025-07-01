@@ -2,148 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>University of the East - Caloocan</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Information Form</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="../../css/mainpage/index.css" rel="stylesheet">
+
+  <style>
+    .section-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f1f1;
+      padding-bottom: 4px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Background -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="../../assets/videoplayback.mp4" type="video/mp4">
-  </video>
-  <div class="overlay-bg"></div>
 
-  <!-- Navbar -->
-  <!-- ... (unchanged navbar code) ... -->
+<!-- Step 1: Personal Information -->
+<div class="container my-5">
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+      <h4 class="text-dark border-bottom pb-2 mb-4">Personal Information</h4>
 
-  <!-- Main Content -->
-  <!-- ... (unchanged main content code) ... -->
-
-  <!-- Login Container -->
-  <div class="overlay" id="overlay"></div>
-  <div class="login-container" id="loginContainer">
-
-    <!-- Login Modal -->
-    <div class="glass-box p-4" id="loginBox">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h3 class="text-center mb-4">Admin Login</h3>
-      <form id="loginForm">
-        <div class="mb-3">
-          <label for="loginEmail" class="form-label">Email</label>
-          <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-            <input type="email" class="form-control" id="loginEmail" required>
-          </div>
+      <!-- Info Icon Section -->
+      <div class="d-flex align-items-start mb-4">
+        <div class="me-2 mt-1 text-primary">
+          <i class="bi bi-info-circle-fill"></i>
         </div>
-        <div class="mb-3">
-          <label for="loginPassword" class="form-label">Password</label>
-          <div class="input-group position-relative">
-            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-            <input type="password" class="form-control pe-5" id="loginPassword" required>
-            <button type="button" class="toggle-password-btn" onclick="togglePassword('loginPassword', 'toggleIcon1')">
-              <i id="toggleIcon1" class="bi bi-eye"></i>
-            </button>
-          </div>
+        <div class="small">
+          <ol class="mb-0 ps-3">
+            <li>All fields must be filled out, unless they are marked as optional.</li>
+            <li>Enter your name during your stay at the university.</li>
+          </ol>
         </div>
-        <div class="mb-3 text-end">
-          <button type="button" class="btn-toggle" id="toSignup">Sign Up</button>
-        </div>
-        <button type="submit" class="btn btn-light w-100">Login</button>
-      </form>
-    </div>
+      </div>
 
-    <!-- Signup Modal -->
-    <!-- ... (unchanged signup modal) ... -->
+      <div class="section-title">Basic Information</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">First Name</label><input name="firstName" class="form-control" required></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Last Name</label><input name="lastName" class="form-control" required></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Middle Name</label><input name="middleName" class="form-control"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Suffix <small class="text-muted">(optional)</small></label><input name="suffix" class="form-control"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Maiden Name <small class="text-muted">(optional)</small></label><input name="maidenName" class="form-control"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Birthdate</label><input type="date" name="birthdate" class="form-control" required></div>
+      </div>
 
-    <!-- OTP Modal -->
-    <div class="glass-box p-4" id="otpBox" style="display: none;">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h3 class="text-center mb-3">OTP Verification</h3>
-      <p class="text-light text-center small">Enter the 6-digit code sent to your email.</p>
-      <form id="otpForm">
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
-          <input type="text" class="form-control text-center" id="otpInput" maxlength="6" placeholder="______" required>
+      <div class="section-title">Contact Information</div>
+      <!-- Info Icon Section -->
+      <div class="d-flex align-items-start mb-3">
+        <div class="me-2 mt-1 text-primary">
+          <i class="bi bi-info-circle-fill"></i>
         </div>
-        <button type="submit" class="btn btn-light w-100">Verify</button>
-      </form>
+        <div class="small">
+          To ensure effective communication regarding this application, kindly furnish current contact details.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Address</label><input name="address" class="form-control"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Email Address</label><input type="email" name="email" class="form-control"></div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Mobile No. <small class="text-muted">Format: +&lt;country code&gt;&lt;mobile number&gt;</small></label>
+          <input name="mobile" class="form-control">
+        </div>
+        <div class="col-md-6 mb-3"><label class="form-label">Landline No.</label><input name="landline" class="form-control"></div>
+      </div>
+
+      <div class="section-title">College/Course History</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Last School Year Attended</label><input name="lastSY" class="form-control"></div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">College/Course Attended</label>
+          <select name="course" class="form-select">
+            <option>ADVERTISING ARTS</option>
+            <!-- Add more options here -->
+          </select>
+        </div>
+        <div class="col-12 mb-3">
+          <button type="button" class="btn btn-outline-secondary btn-sm">+ New Row</button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" class="btn btn-light border">Cancel</button>
+        <button type="button" class="btn btn-success" onclick="nextStep()">Next: Document Request</button>
+      </div>
+
     </div>
   </div>
+</div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function togglePassword(inputId, iconId) {
-      const input = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-      const isHidden = input.type === "password";
-      input.type = isHidden ? "text" : "password";
-      icon.classList.toggle("bi-eye", !isHidden);
-      icon.classList.toggle("bi-eye-slash", isHidden);
-    }
+<!-- Optionally include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    function closeModal() {
-      document.getElementById("loginContainer").style.display = "none";
-      document.getElementById("overlay").style.display = "none";
-      ["loginBox", "signupBox", "otpBox"].forEach(id => {
-        const box = document.getElementById(id);
-        box.classList.remove("show");
-        box.style.display = "none";
-      });
-      document.body.style.overflow = "";
-    }
+<script>
+  function nextStep() {
+    alert("Proceeding to the next step...");
+  }
+</script>
 
-    document.getElementById("showLoginBtn").addEventListener("click", () => {
-      document.getElementById("loginContainer").style.display = "flex";
-      document.getElementById("overlay").style.display = "block";
-      document.body.style.overflow = "hidden";
-      document.getElementById("loginBox").style.display = "block";
-      setTimeout(() => document.getElementById("loginBox").classList.add("show"), 10);
-    });
-
-    document.getElementById("toSignup").addEventListener("click", () => {
-      document.getElementById("loginBox").classList.remove("show");
-      document.getElementById("loginBox").style.display = "none";
-      document.getElementById("signupBox").style.display = "block";
-      setTimeout(() => document.getElementById("signupBox").classList.add("show"), 10);
-    });
-
-    document.getElementById("toLogin").addEventListener("click", () => {
-      document.getElementById("signupBox").classList.remove("show");
-      document.getElementById("signupBox").style.display = "none";
-      document.getElementById("loginBox").style.display = "block";
-      setTimeout(() => document.getElementById("loginBox").classList.add("show"), 10);
-    });
-
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value.trim();
-
-      if (!email || !password) {
-        alert("Please enter both email and password.");
-        return;
-      }
-
-      document.getElementById("loginBox").classList.remove("show");
-      document.getElementById("loginBox").style.display = "none";
-      document.getElementById("otpBox").style.display = "block";
-      setTimeout(() => document.getElementById("otpBox").classList.add("show"), 10);
-    });
-
-    document.getElementById("otpForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const otp = document.getElementById("otpInput").value.trim();
-
-      if (otp === "123456") {
-        alert("Login successful!");
-        closeModal();
-      } else {
-        alert("Incorrect OTP. Please try again.");
-      }
-    });
-  </script>
 </body>
 </html>
